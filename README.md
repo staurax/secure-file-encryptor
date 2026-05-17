@@ -1,34 +1,36 @@
 # Secure File Encryptor
 
-A portable Windows desktop application for encrypting and decrypting files with password protection.
+A modern Windows desktop tool for encrypting and decrypting local files with password protection.
 
-## Download
-
-Go to the **Releases** section and download the latest Windows portable ZIP file.
+Built with C++ and Qt 6 Widgets.
 
 ## Features
 
-- Modern desktop GUI
-- Encrypt files with password protection
-- Decrypt files created by this tool
+- File encryption and decryption
+- Password-protected encrypted files
 - Local processing only
-- Portable Windows build
-- No installation required
+- Modern two-panel Qt desktop interface
+- Portable Windows release package
 
-## How to Use
+## Download
 
-1. Download the ZIP file from Releases.
-2. Extract the ZIP file.
-3. Run `SecureFileEncryptor.exe`.
-4. Select Encrypt or Decrypt mode.
-5. Choose input and output file paths.
-6. Enter password.
-7. Click Encrypt or Decrypt.
+Download the latest Windows build from the GitHub Releases page.
 
-## Important Security Notice
-
-This tool is created for educational purposes. Do not use it for highly sensitive real-world data unless the cryptography has been properly reviewed.
+Use the full portable folder from the `.zip` file. Do not run the `.exe` by itself because the Qt runtime files must stay beside it.
 
 ## Author
 
-Developed by Hannan Asghar.
+Build by Hannan Asghar (@Staurax)
+
+## Project Notes
+
+This project preserves the original Secure File Encryptor V2 backend logic:
+
+- `MAGIC_HEADER = "ENC_V2"`
+- `KEY_STRETCH = 1000`
+- `passwordChecksum()`
+- `stretchKey()`
+- `xorCrypt()`
+- `encryptFile()`
+- `decryptFile()`
+
